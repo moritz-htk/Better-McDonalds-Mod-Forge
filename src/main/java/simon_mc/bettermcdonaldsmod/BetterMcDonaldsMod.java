@@ -1,16 +1,10 @@
 package simon_mc.bettermcdonaldsmod;
 
-import com.mojang.logging.LogUtils;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.slf4j.Logger;
 import simon_mc.bettermcdonaldsmod.block.ModBlocks;
 import simon_mc.bettermcdonaldsmod.item.ModCreativeModeTabs;
 import simon_mc.bettermcdonaldsmod.item.ModItems;
@@ -18,7 +12,6 @@ import simon_mc.bettermcdonaldsmod.item.ModItems;
 @Mod(BetterMcDonaldsMod.MOD_ID)
 public class BetterMcDonaldsMod {
     public static final String MOD_ID = "bettermcdonaldsmod";
-    private static final Logger LOGGER = LogUtils.getLogger();
 
     public BetterMcDonaldsMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -27,14 +20,9 @@ public class BetterMcDonaldsMod {
         ModItems.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
 
-        modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
-    }
-
-    private void commonSetup(final FMLCommonSetupEvent event) {
-
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -64,14 +52,6 @@ public class BetterMcDonaldsMod {
             event.accept(ModItems.LIPTON_ICE_TEA_PEACH);
             event.accept(ModItems.MCFLURRY);
             event.accept(ModItems.KNIFE);
-        }
-    }
-
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-
         }
     }
 }
