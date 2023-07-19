@@ -74,7 +74,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(consumer, new ResourceLocation(BetterMcDonaldsMod.MOD_ID, getItemName(ModItems.COOKED_BACON.get()) + "_campfire_cooking"));
          */
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.MAYONNAISE.get())
+                .requires(Items.MILK_BUCKET.asItem())
                 .requires(Items.EGG.asItem())
+                .unlockedBy(getHasName(Items.MILK_BUCKET.asItem()), has(Items.MILK_BUCKET))
                 .unlockedBy(getHasName(Items.EGG.asItem()), has(Items.EGG.asItem()))
                 .save(consumer, new ResourceLocation(BetterMcDonaldsMod.MOD_ID, getItemName(ModItems.MAYONNAISE.get())));
 
@@ -82,13 +84,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Items.WATER_BUCKET.asItem())
                 .requires(Items.SUGAR.asItem())
                 .requires(ModTagProvider.Items.SALT)
-                .requires(Items.WHEAT.asItem())
-                .requires(Items.ORANGE_DYE.asItem())
+                .requires(Items.CARROT.asItem())
                 .unlockedBy(getHasName(Items.WATER_BUCKET.asItem()), has(Items.WATER_BUCKET))
                 .unlockedBy(getHasName(Items.SUGAR.asItem()), has(Items.SUGAR))
                 .unlockedBy(getHasName(ModItems.SALT.get()), has(ModTagProvider.Items.SALT))
-                .unlockedBy(getHasName(Items.WHEAT.asItem()), has(Items.WHEAT))
-                .unlockedBy(getHasName(Items.ORANGE_DYE.asItem()), has(Items.ORANGE_DYE))
+                .unlockedBy(getHasName(Items.CARROT.asItem()), has(Items.CARROT))
                 .save(consumer, new ResourceLocation(BetterMcDonaldsMod.MOD_ID, getItemName(ModItems.SWEET_SOUR_SAUCE.get())));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.KETCHUP.get())

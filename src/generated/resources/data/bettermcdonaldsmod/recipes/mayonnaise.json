@@ -3,6 +3,9 @@
   "category": "misc",
   "ingredients": [
     {
+      "item": "minecraft:milk_bucket"
+    },
+    {
       "item": "minecraft:egg"
     }
   ],

@@ -12,10 +12,7 @@
       "tag": "forge:dusts/salt"
     },
     {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:orange_dye"
+      "item": "minecraft:carrot"
     }
   ],
   "result": {
