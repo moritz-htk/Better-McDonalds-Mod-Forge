@@ -84,11 +84,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Items.WATER_BUCKET.asItem())
                 .requires(Items.SUGAR.asItem())
                 .requires(ModTagProvider.Items.SALT)
-                .requires(Items.CARROT.asItem())
+                .requires(Items.HONEY_BOTTLE.asItem())
                 .unlockedBy(getHasName(Items.WATER_BUCKET.asItem()), has(Items.WATER_BUCKET))
                 .unlockedBy(getHasName(Items.SUGAR.asItem()), has(Items.SUGAR))
                 .unlockedBy(getHasName(ModItems.SALT.get()), has(ModTagProvider.Items.SALT))
-                .unlockedBy(getHasName(Items.CARROT.asItem()), has(Items.CARROT))
+                .unlockedBy(getHasName(Items.HONEY_BOTTLE.asItem()), has(Items.HONEY_BOTTLE))
                 .save(consumer, new ResourceLocation(BetterMcDonaldsMod.MOD_ID, getItemName(ModItems.SWEET_SOUR_SAUCE.get())));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.KETCHUP.get())

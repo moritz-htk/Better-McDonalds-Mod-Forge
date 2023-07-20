@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_carrot": {
+    "has_honey_bottle": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:carrot"
+              "minecraft:honey_bottle"
             ]
           }
         ]
@@ -59,7 +59,7 @@
       "has_water_bucket",
       "has_sugar",
       "has_salt",
-      "has_carrot",
+      "has_honey_bottle",
       "has_the_recipe"
     ]
   ],
