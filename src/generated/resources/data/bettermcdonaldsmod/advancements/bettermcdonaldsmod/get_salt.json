@@ -1,12 +1,12 @@
 {
-  "parent": "bettermcdonaldsmod:start",
+  "parent": "bettermcdonaldsmod:bettermcdonaldsmod/root",
   "criteria": {
     "inventory_changed": {
       "conditions": {
         "items": [
           {
             "items": [
-              "bettermcdonaldsmod:knife"
+              "bettermcdonaldsmod:salt"
             ]
           }
         ]
@@ -18,17 +18,16 @@
     "announce_to_chat": true,
     "background": "bettermcdonaldsmod:textures/screens/advancement_tab.png",
     "description": {
-      "translate": "advancement.bettermcdonaldsmod.craft_knife.description"
+      "translate": "advancement.bettermcdonaldsmod.get_salt.description"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "bettermcdonaldsmod:knife",
-      "nbt": "{Damage:0}"
+      "item": "bettermcdonaldsmod:salt"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.bettermcdonaldsmod.craft_knife.title"
+      "translate": "advancement.bettermcdonaldsmod.get_salt.title"
     }
   },
   "requirements": [

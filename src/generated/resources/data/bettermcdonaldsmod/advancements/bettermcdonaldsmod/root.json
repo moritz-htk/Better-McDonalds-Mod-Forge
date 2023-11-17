@@ -9,7 +9,7 @@
     "announce_to_chat": false,
     "background": "bettermcdonaldsmod:textures/screens/advancement_tab.png",
     "description": {
-      "translate": "advancement.bettermcdonaldsmod.start.description"
+      "translate": "advancement.bettermcdonaldsmod.root.description"
     },
     "frame": "task",
     "hidden": false,

@@ -18,9 +18,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        add(ModBlocks.SALT_BLOCK.get(),
-                (block) -> createOreDrop(ModBlocks.SALT_BLOCK.get(), ModItems.SALT.get())
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))));
+        add(ModBlocks.SALT_BLOCK.get(), (block) -> createOreDrop(ModBlocks.SALT_BLOCK.get(), ModItems.SALT.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))));
     }
 
     @Override

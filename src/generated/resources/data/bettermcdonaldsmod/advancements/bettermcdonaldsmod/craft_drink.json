@@ -1,12 +1,12 @@
 {
-  "parent": "bettermcdonaldsmod:start",
+  "parent": "bettermcdonaldsmod:bettermcdonaldsmod/get_salt",
   "criteria": {
     "inventory_changed": {
       "conditions": {
         "items": [
           {
             "items": [
-              "bettermcdonaldsmod:salt"
+              "bettermcdonaldsmod:coca_cola"
             ]
           }
         ]
@@ -18,16 +18,16 @@
     "announce_to_chat": true,
     "background": "bettermcdonaldsmod:textures/screens/advancement_tab.png",
     "description": {
-      "translate": "advancement.bettermcdonaldsmod.get_salt.description"
+      "translate": "advancement.bettermcdonaldsmod.craft_drink.description"
     },
-    "frame": "task",
+    "frame": "goal",
     "hidden": false,
     "icon": {
-      "item": "bettermcdonaldsmod:salt"
+      "item": "bettermcdonaldsmod:coca_cola"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.bettermcdonaldsmod.get_salt.title"
+      "translate": "advancement.bettermcdonaldsmod.craft_drink.title"
     }
   },
   "requirements": [

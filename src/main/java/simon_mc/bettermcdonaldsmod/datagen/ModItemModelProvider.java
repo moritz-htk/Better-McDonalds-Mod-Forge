@@ -20,8 +20,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CHEESE);
         simpleItem(ModItems.BEEF_PATTY);
         simpleItem(ModItems.COOKED_BEEF_PATTY);
-        // simpleItem(ModItems.RAW_BACON);
-        // simpleItem(ModItems.COOKED_BACON);
         simpleItem(ModItems.MAYONNAISE);
         simpleItem(ModItems.SWEET_SOUR_SAUCE);
         simpleItem(ModItems.KETCHUP);

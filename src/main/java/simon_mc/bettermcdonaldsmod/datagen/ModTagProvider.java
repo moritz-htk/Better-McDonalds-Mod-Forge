@@ -19,57 +19,66 @@ import java.util.concurrent.CompletableFuture;
 
 public class ModTagProvider {
     public static class Items extends TagsProvider<Item>{
-        public static final TagKey<Item> SALT = ForgeRegistries.ITEMS.tags().createTagKey(new ResourceLocation("forge", "dusts/salt"));
-        public static final TagKey<Item> BURGERS = ForgeRegistries.ITEMS.tags().createTagKey(new ResourceLocation("bettermcdonaldsmod", "burgers"));
-        public static final TagKey<Item> DRINKS = ForgeRegistries.ITEMS.tags().createTagKey(new ResourceLocation("bettermcdonaldsmod", "drinks"));
-        public static final TagKey<Item> SIDE_DISHES = ForgeRegistries.ITEMS.tags().createTagKey(new ResourceLocation("bettermcdonaldsmod", "side_dishes"));
-        public static final TagKey<Item> SAUCES = ForgeRegistries.ITEMS.tags().createTagKey(new ResourceLocation("bettermcdonaldsmod", "sauces"));
+        public static final TagKey<Item> SALT = registerItemTag("forge", "dusts/salt");
+        public static final TagKey<Item> DUSTS = registerItemTag("forge", "dusts");
+        public static final TagKey<Item> BURGERS = registerItemTag(BetterMcDonaldsMod.MOD_ID, "burgers");
+        public static final TagKey<Item> DRINKS = registerItemTag(BetterMcDonaldsMod.MOD_ID, "drinks");
+        public static final TagKey<Item> SIDE_DISHES = registerItemTag(BetterMcDonaldsMod.MOD_ID, "side_dishes");
+        public static final TagKey<Item> SAUCES = registerItemTag(BetterMcDonaldsMod.MOD_ID, "sauces");
 
         public Items(PackOutput output, CompletableFuture<HolderLookup.Provider> registries, @Nullable ExistingFileHelper existingFileHelper) {
             super(output, Registries.ITEM, registries, BetterMcDonaldsMod.MOD_ID, existingFileHelper);
         }
 
+        private static TagKey<Item> registerItemTag(String namespace, String path) {
+            return ForgeRegistries.ITEMS.tags().createTagKey(new ResourceLocation(namespace, path));
+        }
+
         @Override
         protected void addTags(HolderLookup.Provider provider) {
-            TagAppender<Item> saltTagAppender = tag(SALT);
-            saltTagAppender.add(ModItems.SALT.getKey());
+            tag(SALT).add(ModItems.SALT.getKey());
+            tag(DUSTS).addTag(Items.SALT);
+            tag(BURGERS)
+                    .add(ModItems.HAMBURGER.getKey())
+                    .add(ModItems.CHEESEBURGER.getKey())
+                    .add(ModItems.BIG_MAC.getKey())
+                    .add(ModItems.CHICKENBURGER.getKey())
+                    .add(ModItems.MCCHICKEN.getKey())
+                    .add(ModItems.FILET_O_FISH.getKey());
 
-            TagAppender<Item> burgerTagAppender = tag(BURGERS);
-            burgerTagAppender.add(ModItems.HAMBURGER.getKey());
-            burgerTagAppender.add(ModItems.CHEESEBURGER.getKey());
-            burgerTagAppender.add(ModItems.BIG_MAC.getKey());
-            burgerTagAppender.add(ModItems.CHICKENBURGER.getKey());
-            burgerTagAppender.add(ModItems.MCCHICKEN.getKey());
-            burgerTagAppender.add(ModItems.FILET_O_FISH.getKey());
+            tag(DRINKS)
+                    .add(ModItems.COCA_COLA.getKey())
+                    .add(ModItems.FANTA.getKey())
+                    .add(ModItems.SPRITE.getKey())
+                    .add(ModItems.LIPTON_ICE_TEA_PEACH.getKey());
 
-            TagAppender<Item> drinkTagAppender = tag(DRINKS);
-            drinkTagAppender.add(ModItems.COCA_COLA.getKey());
-            drinkTagAppender.add(ModItems.FANTA.getKey());
-            drinkTagAppender.add(ModItems.SPRITE.getKey());
-            drinkTagAppender.add(ModItems.LIPTON_ICE_TEA_PEACH.getKey());
+            tag(SIDE_DISHES)
+                    .add(ModItems.CHICKEN_MCNUGGETS.getKey())
+                    .add(ModItems.FRIES.getKey());
 
-            TagAppender<Item> sideDishTagAppender = tag(SIDE_DISHES);
-            sideDishTagAppender.add(ModItems.CHICKEN_MCNUGGETS.getKey());
-            sideDishTagAppender.add(ModItems.FRIES.getKey());
-
-            TagAppender<Item> sauceTagAppender = tag(SAUCES);
-            sauceTagAppender.add(ModItems.MAYONNAISE.getKey());
-            sauceTagAppender.add(ModItems.SWEET_SOUR_SAUCE.getKey());
-            sauceTagAppender.add(ModItems.KETCHUP.getKey());
+            tag(SAUCES)
+                    .add(ModItems.MAYONNAISE.getKey())
+                    .add(ModItems.SWEET_SOUR_SAUCE.getKey())
+                    .add(ModItems.KETCHUP.getKey());
         }
     }
 
     public static class Blocks extends TagsProvider<Block>{
-        public static final TagKey<Block> SALT_BLOCK = ForgeRegistries.BLOCKS.tags().createTagKey(new ResourceLocation("forge", "salt"));
+        public static final TagKey<Block> SALT_BLOCK = registerBlockTag("forge", "salt");
+        public static final TagKey<Block> SHOVEL_MINEABLE = registerBlockTag("minecraft", "mineable/shovel");
 
         public Blocks(PackOutput output, CompletableFuture<HolderLookup.Provider> registries, @Nullable ExistingFileHelper existingFileHelper) {
             super(output, Registries.BLOCK, registries, BetterMcDonaldsMod.MOD_ID, existingFileHelper);
         }
 
+        private static TagKey<Block> registerBlockTag(String namespace, String path) {
+            return ForgeRegistries.BLOCKS.tags().createTagKey(new ResourceLocation(namespace, path));
+        }
+
         @Override
         protected void addTags(HolderLookup.Provider provider) {
-            TagAppender<Block> saltBlockTagAppender = tag(SALT_BLOCK);
-            saltBlockTagAppender.add(ModBlocks.SALT_BLOCK.getKey());
+            tag(SALT_BLOCK).add(ModBlocks.SALT_BLOCK.getKey());
+            tag(SHOVEL_MINEABLE).add(ModBlocks.SALT_BLOCK.getKey());
         }
     }
 }

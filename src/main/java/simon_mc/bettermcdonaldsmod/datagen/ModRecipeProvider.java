@@ -53,26 +53,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.BEEF_PATTY.get()), has(ModItems.BEEF_PATTY.get()))
                 .save(consumer, new ResourceLocation(BetterMcDonaldsMod.MOD_ID, getItemName(ModItems.COOKED_BEEF_PATTY.get()) + "_campfire_cooking"));
 
-        /*
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RAW_BACON.get(), 2)
-                .requires(ModItems.KNIFE.get())
-                .requires(Items.PORKCHOP.asItem())
-                .unlockedBy(getHasName(ModItems.KNIFE.get()), has(ModItems.KNIFE.get()))
-                .unlockedBy(getHasName(Items.PORKCHOP.asItem()), has(Items.PORKCHOP.asItem()))
-                .save(consumer, new ResourceLocation(BetterMcDonaldsMod.MOD_ID, getItemName(ModItems.RAW_BACON.get())));
-
-        SimpleCookingRecipeBuilder.generic(Ingredient.of(ModItems.RAW_BACON.get()), RecipeCategory.FOOD, ModItems.COOKED_BACON.get(), 1.0f, 200, RecipeSerializer.SMELTING_RECIPE)
-                .unlockedBy(getHasName(ModItems.RAW_BACON.get()), has(ModItems.RAW_BACON.get()))
-                .save(consumer, new ResourceLocation(BetterMcDonaldsMod.MOD_ID, getItemName(ModItems.COOKED_BACON.get()) + "_smelting"));
-
-        SimpleCookingRecipeBuilder.generic(Ingredient.of(ModItems.RAW_BACON.get()), RecipeCategory.FOOD, ModItems.COOKED_BACON.get(), 1.0f, 100, RecipeSerializer.SMOKING_RECIPE)
-                .unlockedBy(getHasName(ModItems.RAW_BACON.get()), has(ModItems.RAW_BACON.get()))
-                .save(consumer, new ResourceLocation(BetterMcDonaldsMod.MOD_ID, getItemName(ModItems.COOKED_BACON.get()) + "_smoking"));
-
-        SimpleCookingRecipeBuilder.generic(Ingredient.of(ModItems.RAW_BACON.get()), RecipeCategory.FOOD, ModItems.COOKED_BACON.get(), 1.0f, 600, RecipeSerializer.CAMPFIRE_COOKING_RECIPE)
-                .unlockedBy(getHasName(ModItems.RAW_BACON.get()), has(ModItems.RAW_BACON.get()))
-                .save(consumer, new ResourceLocation(BetterMcDonaldsMod.MOD_ID, getItemName(ModItems.COOKED_BACON.get()) + "_campfire_cooking"));
-         */
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.MAYONNAISE.get())
                 .requires(Items.MILK_BUCKET.asItem())
                 .requires(Items.EGG.asItem())

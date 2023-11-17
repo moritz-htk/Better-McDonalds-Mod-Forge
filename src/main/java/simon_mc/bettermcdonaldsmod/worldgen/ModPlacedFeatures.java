@@ -20,17 +20,14 @@ public class ModPlacedFeatures {
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
-
-        register(context, configuredFeatures.getOrThrow(ModConfiguredFeatures.SALT_BLOCK_KEY),
-                ModDiskPlacement.modifiers(CountPlacement.of(2), InSquarePlacement.spread(), HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR_WG), BlockPredicateFilter.forPredicate(BlockPredicate.matchesFluids(Fluids.WATER)), BiomeFilter.biome()));
+        register(context, configuredFeatures.getOrThrow(ModConfiguredFeatures.SALT_BLOCK_KEY), ModDiskPlacement.modifiers(CountPlacement.of(2), InSquarePlacement.spread(), HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR_WG), BlockPredicateFilter.forPredicate(BlockPredicate.matchesFluids(Fluids.WATER)), BiomeFilter.biome()));
     }
 
     private static ResourceKey<PlacedFeature> createKey() {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(BetterMcDonaldsMod.MOD_ID, "salt_block_placed"));
     }
 
-    private static void register(BootstapContext<PlacedFeature> context, Holder<ConfiguredFeature<?, ?>> configuration,
-                                 List<PlacementModifier> modifiers) {
-        context.register(ModPlacedFeatures.SALT_BLOCK_PLACED_KEY, new PlacedFeature(configuration, List.copyOf(modifiers)));
+    private static void register(BootstapContext<PlacedFeature> context, Holder<ConfiguredFeature<?, ?>> configuration, List<PlacementModifier> modifiers) {
+        context.register(SALT_BLOCK_PLACED_KEY, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }
 }

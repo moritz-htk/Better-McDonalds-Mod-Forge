@@ -1,5 +1,5 @@
 {
-  "parent": "bettermcdonaldsmod:craft_knife",
+  "parent": "bettermcdonaldsmod:bettermcdonaldsmod/craft_knife",
   "criteria": {
     "inventory_changed": {
       "conditions": {
