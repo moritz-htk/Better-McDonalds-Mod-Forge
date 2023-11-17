@@ -25,13 +25,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_grass": {
+    "has_lettuce": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:grass"
-            ]
+            "tag": "forge:crops/lettuce"
           }
         ]
       },
@@ -61,7 +59,7 @@
       "has_bread",
       "has_cooked_chicken",
       "has_mayonnaise",
-      "has_grass",
+      "has_lettuce",
       "has_the_recipe"
     ]
   ],

@@ -12,18 +12,18 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import simon_mc.bettermcdonaldsmod.BetterMcDonaldsMod;
+import simon_mc.bettermcdonaldsmod.block.custom.LettuceCropBlock;
+import simon_mc.bettermcdonaldsmod.block.custom.TomatoCropBlock;
 import simon_mc.bettermcdonaldsmod.item.ModItems;
 
 import java.util.function.Supplier;
 
 public class ModBlocks {
-    public static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, BetterMcDonaldsMod.MOD_ID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BetterMcDonaldsMod.MOD_ID);
 
-    public static final RegistryObject<Block> SALT_BLOCK = registerBlock(
-            () -> new FallingBlock(BlockBehaviour.Properties.copy(Blocks.SAND)
-                    .sound(SoundType.SAND)
-                    .strength(0.5f)));
+    public static final RegistryObject<Block> SALT_BLOCK = registerBlock(() -> new FallingBlock(BlockBehaviour.Properties.copy(Blocks.SAND).sound(SoundType.SAND).strength(0.5f)));
+    public static final RegistryObject<Block> TOMATO_CROP = registerCropBlock("tomato_crop", () -> new TomatoCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
+    public static final RegistryObject<Block> LETTUCE_CROP = registerCropBlock("lettuce_crop", () -> new LettuceCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register("salt_block", block);
@@ -32,8 +32,11 @@ public class ModBlocks {
     }
 
     private static <T extends Block> void registerBlockItem(RegistryObject<T> block) {
-        ModItems.ITEMS.register("salt_block", () -> new BlockItem(block.get(),
-                new Item.Properties()));
+        ModItems.ITEMS.register("salt_block", () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+
+    private static <T extends Block> RegistryObject<T> registerCropBlock(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
     }
 
     public static void register(IEventBus eventBus) {

@@ -1,18 +1,6 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_red_dye": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:red_dye"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_salt": {
       "conditions": {
         "items": [
@@ -41,6 +29,16 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
+    "has_tomato": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:crops/tomato"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_water_bucket": {
       "conditions": {
         "items": [
@@ -59,7 +57,7 @@
       "has_water_bucket",
       "has_sugar",
       "has_salt",
-      "has_red_dye",
+      "has_tomato",
       "has_the_recipe"
     ]
   ],

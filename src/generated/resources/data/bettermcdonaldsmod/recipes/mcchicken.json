@@ -12,7 +12,7 @@
       "item": "bettermcdonaldsmod:mayonnaise"
     },
     {
-      "item": "minecraft:grass"
+      "tag": "forge:crops/lettuce"
     }
   ],
   "result": {

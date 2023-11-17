@@ -12,7 +12,7 @@
       "item": "bettermcdonaldsmod:ketchup"
     },
     {
-      "item": "minecraft:grass"
+      "tag": "forge:crops/lettuce"
     }
   ],
   "result": {

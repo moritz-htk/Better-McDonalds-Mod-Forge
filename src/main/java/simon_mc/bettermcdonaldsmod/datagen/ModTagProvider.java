@@ -21,6 +21,12 @@ public class ModTagProvider {
     public static class Items extends TagsProvider<Item>{
         public static final TagKey<Item> SALT = registerItemTag("forge", "dusts/salt");
         public static final TagKey<Item> DUSTS = registerItemTag("forge", "dusts");
+        public static final TagKey<Item> TOMATO = registerItemTag("forge", "crops/tomato");
+        public static final TagKey<Item> LETTUCE = registerItemTag("forge", "crops/lettuce");
+        public static final TagKey<Item> TOMATO_SEEDS = registerItemTag("forge", "seeds/tomato");
+        public static final TagKey<Item> LETTUCE_SEEDS = registerItemTag("forge", "seeds/lettuce");
+        public static final TagKey<Item> CROPS = registerItemTag("forge", "crops");
+        public static final TagKey<Item> SEEDS = registerItemTag("forge", "seeds");
         public static final TagKey<Item> BURGERS = registerItemTag(BetterMcDonaldsMod.MOD_ID, "burgers");
         public static final TagKey<Item> DRINKS = registerItemTag(BetterMcDonaldsMod.MOD_ID, "drinks");
         public static final TagKey<Item> SIDE_DISHES = registerItemTag(BetterMcDonaldsMod.MOD_ID, "side_dishes");
@@ -38,6 +44,18 @@ public class ModTagProvider {
         protected void addTags(HolderLookup.Provider provider) {
             tag(SALT).add(ModItems.SALT.getKey());
             tag(DUSTS).addTag(Items.SALT);
+            tag(TOMATO).add(ModItems.TOMATO.getKey());
+            tag(TOMATO_SEEDS).add(ModItems.TOMATO_SEEDS.getKey());
+            tag(LETTUCE).add(ModItems.LETTUCE.getKey());
+            tag(LETTUCE_SEEDS).add(ModItems.LETTUCE_SEEDS.getKey());
+            tag(CROPS)
+                    .addTag(Items.TOMATO)
+                    .addTag(Items.LETTUCE);
+
+            tag(SEEDS)
+                    .addTag(Items.TOMATO_SEEDS)
+                    .addTag(Items.LETTUCE_SEEDS);
+
             tag(BURGERS)
                     .add(ModItems.HAMBURGER.getKey())
                     .add(ModItems.CHEESEBURGER.getKey())

@@ -17,18 +17,29 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(ModItems.SALT);
+        simpleItem(ModItems.TOMATO);
+        simpleItem(ModItems.TOMATO_SEEDS);
+        simpleItem(ModItems.LETTUCE);
+        simpleItem(ModItems.LETTUCE_SEEDS);
         simpleItem(ModItems.CHEESE);
+        simpleItem(ModItems.TORTILLA);
         simpleItem(ModItems.BEEF_PATTY);
         simpleItem(ModItems.COOKED_BEEF_PATTY);
+        simpleItem(ModItems.RAW_BACON);
+        simpleItem(ModItems.COOKED_BACON);
         simpleItem(ModItems.MAYONNAISE);
         simpleItem(ModItems.SWEET_SOUR_SAUCE);
         simpleItem(ModItems.KETCHUP);
+        simpleItem(ModItems.MUSTARD);
         simpleItem(ModItems.HAMBURGER);
         simpleItem(ModItems.CHEESEBURGER);
+        simpleItem(ModItems.MCBACON);
         simpleItem(ModItems.BIG_MAC);
         simpleItem(ModItems.CHICKENBURGER);
         simpleItem(ModItems.MCCHICKEN);
         simpleItem(ModItems.FILET_O_FISH);
+        simpleItem(ModItems.MCWRAP);
+        simpleItem(ModItems.SNACK_SALAD);
         simpleItem(ModItems.CHICKEN_MCNUGGETS);
         simpleItem(ModItems.FRIES);
         simpleItem(ModItems.HAPPY_MEAL);
@@ -41,14 +52,10 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     private void simpleItem(RegistryObject<Item> item) {
-        withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(BetterMcDonaldsMod.MOD_ID, "item/" + item.getId().getPath()));
+        withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(BetterMcDonaldsMod.MOD_ID, "item/" + item.getId().getPath()));
     }
 
     private void handheldItem() {
-        withExistingParent(ModItems.KNIFE.getId().getPath(),
-                new ResourceLocation("item/handheld")).texture("layer0",
-                new ResourceLocation(BetterMcDonaldsMod.MOD_ID, "item/" + ModItems.KNIFE.getId().getPath()));
+        withExistingParent(ModItems.KNIFE.getId().getPath(), new ResourceLocation("item/handheld")).texture("layer0", new ResourceLocation(BetterMcDonaldsMod.MOD_ID, "item/" + ModItems.KNIFE.getId().getPath()));
     }
 }
