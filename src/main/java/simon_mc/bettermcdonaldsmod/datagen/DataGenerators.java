@@ -9,6 +9,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import simon_mc.bettermcdonaldsmod.BetterMcDonaldsMod;
+import simon_mc.bettermcdonaldsmod.data.ModGlobalLootModifierProvider;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -33,5 +34,6 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModTagProvider.Blocks(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(), new ModTagProvider.Items(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(true, new ModAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(true, new ModGlobalLootModifierProvider(packOutput));
     }
 }

@@ -11,6 +11,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import simon_mc.bettermcdonaldsmod.block.ModBlocks;
 import simon_mc.bettermcdonaldsmod.item.ModCreativeModeTabs;
 import simon_mc.bettermcdonaldsmod.item.ModItems;
+import simon_mc.bettermcdonaldsmod.loot.ModLootModifiers;
 
 // Declare the mod as a Forge mod with the specified mod ID
 @Mod(BetterMcDonaldsMod.MOD_ID)
@@ -26,6 +27,7 @@ public class BetterMcDonaldsMod {
         ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
 
         // Register this mod class as a listener for MinecraftForge events
         MinecraftForge.EVENT_BUS.register(this);

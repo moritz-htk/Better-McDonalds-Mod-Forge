@@ -1,5 +1,5 @@
 // Import necessary classes and packages
-package simon_mc.bettermcdonaldsmod.datagen;
+package simon_mc.bettermcdonaldsmod.loot;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
