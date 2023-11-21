@@ -1,3 +1,4 @@
+// Import necessary classes and packages
 package simon_mc.bettermcdonaldsmod.worldgen;
 
 import net.minecraft.core.registries.Registries;
@@ -17,17 +18,23 @@ import simon_mc.bettermcdonaldsmod.block.ModBlocks;
 
 import java.util.List;
 
+// Class for registering configured features
 public class ModConfiguredFeatures {
+    // Define a ResourceKey for the salt block configured feature
     public static final ResourceKey<ConfiguredFeature<?, ?>> SALT_BLOCK_KEY = registerKey("salt_block");
 
+    // Bootstrap method to initialize and register configured features
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
+        // Register the salt block configured feature
         register(context, SALT_BLOCK_KEY, Feature.DISK, new DiskConfiguration(RuleBasedBlockStateProvider.simple(ModBlocks.SALT_BLOCK.get()), BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, Blocks.SAND)), UniformInt.of(2, 3), 1));
     }
 
+    // Method to create a ResourceKey for a configured feature
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(BetterMcDonaldsMod.MOD_ID, name));
     }
 
+    // Method to register a configured feature
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
         context.register(key, new ConfiguredFeature<>(feature, configuration));
     }

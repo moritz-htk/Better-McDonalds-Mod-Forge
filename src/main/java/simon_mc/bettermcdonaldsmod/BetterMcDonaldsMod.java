@@ -1,3 +1,4 @@
+// Import necessary classes and packages
 package simon_mc.bettermcdonaldsmod;
 
 import net.minecraft.world.level.block.ComposterBlock;
@@ -11,25 +12,33 @@ import simon_mc.bettermcdonaldsmod.block.ModBlocks;
 import simon_mc.bettermcdonaldsmod.item.ModCreativeModeTabs;
 import simon_mc.bettermcdonaldsmod.item.ModItems;
 
+// Declare the mod as a Forge mod with the specified mod ID
 @Mod(BetterMcDonaldsMod.MOD_ID)
 public class BetterMcDonaldsMod {
     public static final String MOD_ID = "bettermcdonaldsmod";
 
+    // Constructor for the mod class
     public BetterMcDonaldsMod() {
+        // Get the mod event bus
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        // Register creative mode tab, blocks, and items on the event bus
+        ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
-        ModCreativeModeTabs.register(modEventBus);
 
+        // Register this mod class as a listener for MinecraftForge events
         MinecraftForge.EVENT_BUS.register(this);
 
+        // Add a listener for the FMLCommonSetupEvent and BuildCreativeModeTabContentsEvent
         modEventBus.addListener(this::addCreative);
         modEventBus.addListener(this::commonSetup);
     }
 
+    // Event listener method to configure some aspects of the mod
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            // Configure ComposterBlock to accept certain items for composting
             ComposterBlock.COMPOSTABLES.put(ModItems.TOMATO.get(), 0.65f);
             ComposterBlock.COMPOSTABLES.put(ModItems.TOMATO_SEEDS.get(), 0.2f);
             ComposterBlock.COMPOSTABLES.put(ModItems.LETTUCE.get(), 0.65f);
@@ -37,8 +46,11 @@ public class BetterMcDonaldsMod {
         });
     }
 
+    // Event listener method for adding items to creative mode tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        // Check if the event corresponds to the custom creative mode tab
         if (event.getTab() == ModCreativeModeTabs.BETTER_MCDONALDS_MOD_TAB.get()) {
+            // Add various items to the creative mode tab
             event.accept(ModBlocks.SALT_BLOCK);
             event.accept(ModItems.SALT);
             event.accept(ModItems.TOMATO);

@@ -1,3 +1,4 @@
+// Import necessary classes and packages
 package simon_mc.bettermcdonaldsmod.datagen;
 
 import net.minecraft.data.PackOutput;
@@ -13,13 +14,16 @@ import simon_mc.bettermcdonaldsmod.item.ModItems;
 
 import java.util.function.Consumer;
 
+// Custom recipe provider for defining recipes
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
     public ModRecipeProvider(PackOutput output) {
+        // Initialize the recipe provider with the output location
         super(output);
     }
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+        // Define recipes for the custom blocks and items
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALT_BLOCK.get(), 1)
                 .define('#', ModTagProvider.Items.SALT)
                 .pattern("##")

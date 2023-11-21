@@ -1,3 +1,4 @@
+// Import necessary classes and packages
 package simon_mc.bettermcdonaldsmod.item;
 
 import net.minecraft.world.food.FoodProperties;
@@ -14,9 +15,12 @@ import simon_mc.bettermcdonaldsmod.block.ModBlocks;
 import simon_mc.bettermcdonaldsmod.item.custom.DrinkItem;
 import simon_mc.bettermcdonaldsmod.item.custom.KnifeItem;
 
+// Class for registering custom items using DeferredRegister
 public class ModItems {
+    // Create a DeferredRegister for Item instances
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BetterMcDonaldsMod.MOD_ID);
 
+    // Register each custom item using a RegistryObject
     public static final RegistryObject<Item> SALT = ITEMS.register("salt", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TOMATO = ITEMS.register("tomato", () -> new Item(new Item.Properties().food(registerFoodValues(1, 0.5f).build())));
     public static final RegistryObject<Item> TOMATO_SEEDS = ITEMS.register("tomato_seeds", () -> new ItemNameBlockItem(ModBlocks.TOMATO_CROP.get(), new Item.Properties()));
@@ -49,12 +53,16 @@ public class ModItems {
     public static final RegistryObject<Item> SPRITE = ITEMS.register("sprite", () -> new DrinkItem(new Item.Properties()));
     public static final RegistryObject<Item> LIPTON_ICE_TEA_PEACH = ITEMS.register("lipton_ice_tea_peach", () -> new DrinkItem(new Item.Properties()));
     public static final RegistryObject<Item> MCFLURRY = ITEMS.register("mcflurry", () -> new Item(new Item.Properties().food(registerFoodValues(6, 3f).build())));
+
+    // Register a KnifeItem with custom properties using a RegistryObject
     public static final RegistryObject<SwordItem> KNIFE = ITEMS.register("knife", () -> new KnifeItem(3, -3f, new Item.Properties()));
 
+    // Method to create a FoodProperties.Builder with given nutrition and saturation values
     public static FoodProperties.Builder registerFoodValues(int nutrition, float saturation) {
         return new FoodProperties.Builder().nutrition(nutrition).saturationMod(saturation);
     }
-    
+
+    // Method to register the items to the event bus
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

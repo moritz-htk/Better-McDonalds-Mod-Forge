@@ -1,3 +1,4 @@
+// Import necessary classes and packages
 package simon_mc.bettermcdonaldsmod.datagen;
 
 import net.minecraft.core.HolderLookup;
@@ -17,8 +18,11 @@ import simon_mc.bettermcdonaldsmod.item.ModItems;
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 
+// Definition of the main class for tag generation
 public class ModTagProvider {
+    // Definition of the Items class for item tag generation
     public static class Items extends TagsProvider<Item>{
+        // Definition of various tag keys for items
         public static final TagKey<Item> SALT = registerItemTag("forge", "dusts/salt");
         public static final TagKey<Item> DUSTS = registerItemTag("forge", "dusts");
         public static final TagKey<Item> TOMATO = registerItemTag("forge", "crops/tomato");
@@ -32,14 +36,17 @@ public class ModTagProvider {
         public static final TagKey<Item> SIDE_DISHES = registerItemTag(BetterMcDonaldsMod.MOD_ID, "side_dishes");
         public static final TagKey<Item> SAUCES = registerItemTag(BetterMcDonaldsMod.MOD_ID, "sauces");
 
+        // Constructor for the Items class
         public Items(PackOutput output, CompletableFuture<HolderLookup.Provider> registries, @Nullable ExistingFileHelper existingFileHelper) {
             super(output, Registries.ITEM, registries, BetterMcDonaldsMod.MOD_ID, existingFileHelper);
         }
 
+        // Method to register a custom item tag using the provided namespace and path
         private static TagKey<Item> registerItemTag(String namespace, String path) {
             return ForgeRegistries.ITEMS.tags().createTagKey(new ResourceLocation(namespace, path));
         }
 
+        // Method to add tags to items
         @Override
         protected void addTags(HolderLookup.Provider provider) {
             tag(SALT).add(ModItems.SALT.getKey());
@@ -81,18 +88,23 @@ public class ModTagProvider {
         }
     }
 
+    // Definition of the Blocks class for block tag generation
     public static class Blocks extends TagsProvider<Block>{
+        // Definition of various tag keys for blocks
         public static final TagKey<Block> SALT_BLOCK = registerBlockTag("forge", "salt");
         public static final TagKey<Block> SHOVEL_MINEABLE = registerBlockTag("minecraft", "mineable/shovel");
 
+        // Constructor for the Blocks class
         public Blocks(PackOutput output, CompletableFuture<HolderLookup.Provider> registries, @Nullable ExistingFileHelper existingFileHelper) {
             super(output, Registries.BLOCK, registries, BetterMcDonaldsMod.MOD_ID, existingFileHelper);
         }
 
+        // Method to register a custom block tag using the provided namespace and path
         private static TagKey<Block> registerBlockTag(String namespace, String path) {
             return ForgeRegistries.BLOCKS.tags().createTagKey(new ResourceLocation(namespace, path));
         }
 
+        // Method to add tags to blocks
         @Override
         protected void addTags(HolderLookup.Provider provider) {
             tag(SALT_BLOCK).add(ModBlocks.SALT_BLOCK.getKey());

@@ -1,3 +1,4 @@
+// Import necessary classes and packages
 package simon_mc.bettermcdonaldsmod.datagen;
 
 import net.minecraft.advancements.Advancement;
@@ -19,16 +20,20 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
+// Provider class for generating advancements for the mod
 public class ModAdvancementProvider extends ForgeAdvancementProvider {
     public ModAdvancementProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries, ExistingFileHelper existingFileHelper) {
         super(output, registries, existingFileHelper, List.of(new ModAdvancements()));
     }
 
+    // Nested class for defining advancement generation logic
     private static class ModAdvancements implements ForgeAdvancementProvider.AdvancementGenerator {
         @Override
         public void generate(HolderLookup.Provider registries, Consumer<Advancement> consumer, ExistingFileHelper existingFileHelper) {
+            // Create the root advancement
             Advancement ROOT = createRootAdvancement(consumer, existingFileHelper, FrameType.TASK, ModItems.HAPPY_MEAL.get().getDefaultInstance(), "root");
 
+            // Create child advancements and link them to the root
             Advancement GET_SALT = createAdvancement(consumer, existingFileHelper, FrameType.TASK, ModItems.SALT.get().getDefaultInstance(), "get_salt", ROOT);
             createAdvancement(consumer, existingFileHelper, FrameType.GOAL, ModItems.COCA_COLA.get().getDefaultInstance(), "craft_drink", GET_SALT);
 
@@ -41,6 +46,7 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
         }
     }
 
+    // Method to create the root advancement
     public static Advancement createRootAdvancement(Consumer<Advancement> consumer, ExistingFileHelper existingFileHelper, FrameType frame, ItemStack item, String titleKey) {
         return Advancement.Builder.advancement()
                 .display(createAdvancementDisplay(item,
@@ -50,6 +56,7 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                 .save(consumer, new ResourceLocation(BetterMcDonaldsMod.MOD_ID, BetterMcDonaldsMod.MOD_ID + "/" + titleKey), existingFileHelper);
     }
 
+    // Method to create advancements with a parent
     public static Advancement createAdvancement(Consumer<Advancement> consumer, ExistingFileHelper existingFileHelper, FrameType frame, ItemStack item, String titleKey, Advancement parent) {
         return Advancement.Builder.advancement()
                 .display(createAdvancementDisplay(item,
@@ -60,6 +67,7 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                 .save(consumer, new ResourceLocation(BetterMcDonaldsMod.MOD_ID, BetterMcDonaldsMod.MOD_ID + "/" + titleKey), existingFileHelper);
     }
 
+    // Method to create display information for advancements
     public static DisplayInfo createAdvancementDisplay(ItemStack item, Component component, String titleKey, FrameType frame, boolean showToast, boolean announceToChat) {
         return new DisplayInfo(item, component,
                 Component.translatable("advancement." + BetterMcDonaldsMod.MOD_ID + "." + titleKey + ".description"),

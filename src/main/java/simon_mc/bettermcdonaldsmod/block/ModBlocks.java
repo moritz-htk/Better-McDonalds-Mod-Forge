@@ -1,3 +1,4 @@
+// Import necessary classes and packages
 package simon_mc.bettermcdonaldsmod.block;
 
 import net.minecraft.world.item.BlockItem;
@@ -18,27 +19,34 @@ import simon_mc.bettermcdonaldsmod.item.ModItems;
 
 import java.util.function.Supplier;
 
+// Class for registering custom blocks using DeferredRegister
 public class ModBlocks {
+    // Class for registering custom blocks using DeferredRegister
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BetterMcDonaldsMod.MOD_ID);
 
+    // Register each custom block using a RegistryObject
     public static final RegistryObject<Block> SALT_BLOCK = registerBlock(() -> new FallingBlock(BlockBehaviour.Properties.copy(Blocks.SAND).sound(SoundType.SAND).strength(0.5f)));
     public static final RegistryObject<Block> TOMATO_CROP = registerCropBlock("tomato_crop", () -> new TomatoCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
     public static final RegistryObject<Block> LETTUCE_CROP = registerCropBlock("lettuce_crop", () -> new LettuceCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
 
+    // Method to register a custom block and its associated BlockItem
     private static <T extends Block> RegistryObject<T> registerBlock(Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register("salt_block", block);
         registerBlockItem(toReturn);
         return toReturn;
     }
 
+    // Method to register a BlockItem for a custom block
     private static <T extends Block> void registerBlockItem(RegistryObject<T> block) {
         ModItems.ITEMS.register("salt_block", () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
+    // Method to register a custom crop block
     private static <T extends Block> RegistryObject<T> registerCropBlock(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);
     }
 
+    // Method to register the blocks to the event bus
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
