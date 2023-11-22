@@ -7,6 +7,9 @@
     },
     {
       "tag": "forge:crops/lettuce"
+    },
+    {
+      "item": "minecraft:carrot"
     }
   ],
   "result": {

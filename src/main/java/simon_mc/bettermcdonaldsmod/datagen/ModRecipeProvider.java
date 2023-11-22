@@ -220,8 +220,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SNACK_SALAD.get())
                 .requires(ModTagProvider.Items.TOMATO)
                 .requires(ModTagProvider.Items.LETTUCE)
+                .requires(Items.CARROT)
                 .unlockedBy(getHasName(ModItems.TOMATO.get()), has(ModTagProvider.Items.TOMATO))
                 .unlockedBy(getHasName(ModItems.LETTUCE.get()), has(ModTagProvider.Items.LETTUCE))
+                .unlockedBy(getHasName(Items.CARROT), has(Items.CARROT))
                 .save(consumer, new ResourceLocation(BetterMcDonaldsMod.MOD_ID, getItemName(ModItems.SNACK_SALAD.get())));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHICKEN_MCNUGGETS.get())
