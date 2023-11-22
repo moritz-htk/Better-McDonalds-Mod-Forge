@@ -27,3 +27,4 @@ issueTrackerURL="${mod_issue_url}"
     side="BOTH"
 [modproperties.${mod_id}]
     catalogueItemIcon="${mod_id}:happy_meal"
+    catalogueBackground="background.png"
