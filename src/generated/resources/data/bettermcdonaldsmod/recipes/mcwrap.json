@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "bettermcdonaldsmod:tortilla"
+    },
+    {
+      "item": "minecraft:cooked_chicken"
+    },
+    {
+      "item": "bettermcdonaldsmod:mayonnaise"
+    },
+    {
+      "tag": "forge:crops/lettuce"
+    }
+  ],
+  "result": {
+    "item": "bettermcdonaldsmod:mcwrap"
+  }
+}

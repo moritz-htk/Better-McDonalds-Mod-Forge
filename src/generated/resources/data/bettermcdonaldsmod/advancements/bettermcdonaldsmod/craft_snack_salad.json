@@ -1,0 +1,39 @@
+{
+  "parent": "bettermcdonaldsmod:bettermcdonaldsmod/harvest_lettuce",
+  "criteria": {
+    "inventory_changed": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bettermcdonaldsmod:snack_salad"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "bettermcdonaldsmod:textures/screens/advancement_tab.png",
+    "description": {
+      "translate": "advancement.bettermcdonaldsmod.craft_snack_salad.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "bettermcdonaldsmod:snack_salad"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.bettermcdonaldsmod.craft_snack_salad.title"
+    }
+  },
+  "requirements": [
+    [
+      "inventory_changed"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

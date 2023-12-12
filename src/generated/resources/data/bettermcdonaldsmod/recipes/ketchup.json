@@ -12,10 +12,11 @@
       "tag": "forge:dusts/salt"
     },
     {
-      "item": "minecraft:red_dye"
+      "tag": "forge:crops/tomato"
     }
   ],
   "result": {
+    "count": 2,
     "item": "bettermcdonaldsmod:ketchup"
   }
 }

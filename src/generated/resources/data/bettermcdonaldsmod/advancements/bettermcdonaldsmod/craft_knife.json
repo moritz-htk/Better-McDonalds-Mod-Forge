@@ -1,0 +1,40 @@
+{
+  "parent": "bettermcdonaldsmod:bettermcdonaldsmod/root",
+  "criteria": {
+    "inventory_changed": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bettermcdonaldsmod:knife"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "bettermcdonaldsmod:textures/screens/advancement_tab.png",
+    "description": {
+      "translate": "advancement.bettermcdonaldsmod.craft_knife.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "bettermcdonaldsmod:knife",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.bettermcdonaldsmod.craft_knife.title"
+    }
+  },
+  "requirements": [
+    [
+      "inventory_changed"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

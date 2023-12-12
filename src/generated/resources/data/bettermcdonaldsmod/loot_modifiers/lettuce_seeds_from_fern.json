@@ -1,0 +1,14 @@
+{
+  "type": "bettermcdonaldsmod:add_item",
+  "conditions": [
+    {
+      "block": "minecraft:fern",
+      "condition": "minecraft:block_state_property"
+    },
+    {
+      "chance": 0.15,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "bettermcdonaldsmod:lettuce_seeds"
+}

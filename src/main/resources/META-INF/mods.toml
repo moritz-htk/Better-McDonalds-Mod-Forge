@@ -1,27 +1,30 @@
 modLoader="javafml"
-loaderVersion="[47,)"
-license="moritz_htk Software License Agreement (mSLA)"
-issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/better-mcdonalds-mod/issues"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+issueTrackerURL="${mod_issue_url}"
+
 [[mods]]
-modId="bettermcdonaldsmod"
-version="1.20.1-3.0.3"
-displayName="Better McDonald's Mod"
-displayURL="https://www.curseforge.com/minecraft/mc-mods/better-mcdonalds-mod"
-logoFile="logo.png"
-credits="Volwert123, RPorotos"
-authors="simon_mc"
-description='''Many well-known McDonalds products have been added.'''
-[[dependencies.bettermcdonaldsmod]]
+    modId="${mod_id}"
+    version="${mod_version}"
+    displayName="${mod_name}"
+    displayURL="${mod_url}"
+    logoFile="${mod_logo}"
+    credits="${mod_credits}"
+    authors="${mod_authors}"
+    description='''${mod_description}'''
+
+[[dependencies.${mod_id}]]
     modId="forge"
     mandatory=true
-    versionRange="[47,)"
+    versionRange="${forge_version_range}"
     ordering="NONE"
     side="BOTH"
-[[dependencies.bettermcdonaldsmod]]
+[[dependencies.${mod_id}]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.20,1.21)"
+    versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
-[modproperties.bettermcdonaldsmod]
-    catalogueItemIcon="bettermcdonaldsmod:happy_meal"
+[modproperties.${mod_id}]
+    catalogueItemIcon="${mod_id}:happy_meal"
+    catalogueBackground="background.png"

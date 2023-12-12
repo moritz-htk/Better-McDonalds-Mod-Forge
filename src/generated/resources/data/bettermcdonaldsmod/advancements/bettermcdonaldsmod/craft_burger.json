@@ -1,0 +1,39 @@
+{
+  "parent": "bettermcdonaldsmod:bettermcdonaldsmod/craft_knife",
+  "criteria": {
+    "inventory_changed": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bettermcdonaldsmod:hamburger"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "bettermcdonaldsmod:textures/screens/advancement_tab.png",
+    "description": {
+      "translate": "advancement.bettermcdonaldsmod.craft_burger.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "bettermcdonaldsmod:hamburger"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.bettermcdonaldsmod.craft_burger.title"
+    }
+  },
+  "requirements": [
+    [
+      "inventory_changed"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
