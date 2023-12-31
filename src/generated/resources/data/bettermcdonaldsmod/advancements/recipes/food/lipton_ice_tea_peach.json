@@ -56,17 +56,16 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_water_bucket",
       "has_sugar",
       "has_salt",
-      "has_pink_dye",
-      "has_the_recipe"
+      "has_pink_dye"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:lipton_ice_tea_peach"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

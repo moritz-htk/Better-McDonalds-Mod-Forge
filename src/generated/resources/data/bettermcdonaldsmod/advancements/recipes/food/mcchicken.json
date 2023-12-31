@@ -56,17 +56,16 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_bread",
       "has_cooked_chicken",
       "has_mayonnaise",
-      "has_lettuce",
-      "has_the_recipe"
+      "has_lettuce"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:mcchicken"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

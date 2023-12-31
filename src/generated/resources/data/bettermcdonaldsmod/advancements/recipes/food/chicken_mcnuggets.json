@@ -34,15 +34,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_knife",
-      "has_cooked_chicken",
-      "has_the_recipe"
+      "has_cooked_chicken"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:chicken_mcnuggets"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

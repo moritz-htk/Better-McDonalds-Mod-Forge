@@ -34,15 +34,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_knife",
-      "has_beef",
-      "has_the_recipe"
+      "has_beef"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:beef_patty"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

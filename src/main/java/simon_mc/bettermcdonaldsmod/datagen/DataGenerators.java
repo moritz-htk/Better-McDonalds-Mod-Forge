@@ -9,7 +9,6 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import simon_mc.bettermcdonaldsmod.BetterMcDonaldsMod;
-import simon_mc.bettermcdonaldsmod.data.ModGlobalLootModifierProvider;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -26,14 +25,13 @@ public class DataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         // Add various data providers to the generator
-        generator.addProvider(true, new ModRecipeProvider(packOutput));
-        generator.addProvider(true, ModLootTableProvider.create(packOutput));
-        generator.addProvider(true, new ModBlockStateProvider(packOutput, existingFileHelper));
-        generator.addProvider(true, new ModItemModelProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
-        generator.addProvider(event.includeServer(), new ModTagProvider.Blocks(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModGlobalLootModifierProvider(packOutput));
+        generator.addProvider(event.includeServer(), new ModItemModelProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
         generator.addProvider(event.includeServer(), new ModTagProvider.Items(packOutput, lookupProvider, existingFileHelper));
-        generator.addProvider(true, new ModAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
-        generator.addProvider(true, new ModGlobalLootModifierProvider(packOutput));
+        generator.addProvider(event.includeServer(), new ModTagProvider.Blocks(packOutput, lookupProvider, existingFileHelper));
     }
 }

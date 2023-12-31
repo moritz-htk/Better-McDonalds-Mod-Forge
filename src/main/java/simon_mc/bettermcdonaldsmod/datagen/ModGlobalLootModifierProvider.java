@@ -1,5 +1,5 @@
 // Import necessary classes and packages
-package simon_mc.bettermcdonaldsmod.data;
+package simon_mc.bettermcdonaldsmod.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
@@ -23,9 +23,9 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
     @Override
     protected void start() {
         // Define loot modifiers for seeds obtained from grass and fern blocks
-        addLootModifier("tomato_seeds_from_grass", Blocks.GRASS, ModItems.TOMATO_SEEDS.get());
+        addLootModifier("tomato_seeds_from_grass", Blocks.SHORT_GRASS, ModItems.TOMATO_SEEDS.get());
         addLootModifier("tomato_seeds_from_fern", Blocks.FERN, ModItems.TOMATO_SEEDS.get());
-        addLootModifier("lettuce_seeds_from_grass", Blocks.GRASS, ModItems.LETTUCE_SEEDS.get());
+        addLootModifier("lettuce_seeds_from_grass", Blocks.SHORT_GRASS, ModItems.LETTUCE_SEEDS.get());
         addLootModifier("lettuce_seeds_from_fern", Blocks.FERN, ModItems.LETTUCE_SEEDS.get());
     }
 

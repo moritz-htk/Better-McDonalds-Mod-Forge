@@ -1,7 +1,6 @@
 {
   "criteria": {
     "tick": {
-      "conditions": {},
       "trigger": "minecraft:tick"
     }
   },
@@ -11,15 +10,11 @@
     "description": {
       "translate": "advancement.bettermcdonaldsmod.root.description"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "bettermcdonaldsmod:happy_meal"
     },
     "show_toast": false,
-    "title": {
-      "text": "Better McDonald's Mod"
-    }
+    "title": "Better McDonald's Mod"
   },
   "requirements": [
     [

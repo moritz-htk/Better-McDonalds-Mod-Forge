@@ -56,17 +56,16 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_water_bucket",
       "has_sugar",
       "has_salt",
-      "has_yellow_dye",
-      "has_the_recipe"
+      "has_yellow_dye"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:fanta"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

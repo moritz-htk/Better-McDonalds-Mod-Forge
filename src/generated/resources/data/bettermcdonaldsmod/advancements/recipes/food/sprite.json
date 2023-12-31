@@ -56,17 +56,16 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_water_bucket",
       "has_sugar",
       "has_salt",
-      "has_green_dye",
-      "has_the_recipe"
+      "has_green_dye"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:sprite"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

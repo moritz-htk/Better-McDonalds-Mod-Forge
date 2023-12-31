@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_beef_patty",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_beef_patty"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:cooked_beef_patty_campfire_cooking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

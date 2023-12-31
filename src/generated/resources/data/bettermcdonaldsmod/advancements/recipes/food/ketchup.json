@@ -54,17 +54,16 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_water_bucket",
       "has_sugar",
       "has_salt",
-      "has_tomato",
-      "has_the_recipe"
+      "has_tomato"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:ketchup"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

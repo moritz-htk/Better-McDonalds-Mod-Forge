@@ -32,15 +32,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_milk_bucket",
-      "has_salt",
-      "has_the_recipe"
+      "has_salt"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:cheese"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -56,17 +56,16 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_water_bucket",
       "has_wheat",
       "has_egg",
-      "has_salt",
-      "has_the_recipe"
+      "has_salt"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:tortilla"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

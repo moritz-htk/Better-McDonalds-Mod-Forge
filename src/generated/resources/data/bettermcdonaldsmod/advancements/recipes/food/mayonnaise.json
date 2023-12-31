@@ -34,15 +34,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_milk_bucket",
-      "has_egg",
-      "has_the_recipe"
+      "has_egg"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:mayonnaise"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

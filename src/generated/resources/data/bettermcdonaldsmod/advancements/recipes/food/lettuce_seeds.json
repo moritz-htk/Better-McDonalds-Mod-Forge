@@ -20,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_lettuce",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_lettuce"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:lettuce_seeds"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

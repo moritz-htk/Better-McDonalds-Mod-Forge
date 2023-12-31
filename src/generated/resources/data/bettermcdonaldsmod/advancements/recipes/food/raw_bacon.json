@@ -34,15 +34,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_knife",
-      "has_porkchop",
-      "has_the_recipe"
+      "has_porkchop"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:raw_bacon"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

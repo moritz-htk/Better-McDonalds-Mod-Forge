@@ -15,18 +15,14 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "background": "bettermcdonaldsmod:textures/screens/advancement_tab.png",
     "description": {
       "translate": "advancement.bettermcdonaldsmod.craft_knife.description"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "bettermcdonaldsmod:knife",
       "nbt": "{Damage:0}"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancement.bettermcdonaldsmod.craft_knife.title"
     }

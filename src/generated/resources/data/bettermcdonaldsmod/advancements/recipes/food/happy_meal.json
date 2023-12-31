@@ -52,17 +52,16 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_burger",
       "has_drink",
       "has_side_dish",
-      "has_apple",
-      "has_the_recipe"
+      "has_apple"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:happy_meal"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

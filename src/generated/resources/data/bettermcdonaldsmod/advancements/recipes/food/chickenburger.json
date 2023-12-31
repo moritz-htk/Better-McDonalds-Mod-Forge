@@ -56,17 +56,16 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_bread",
       "has_cooked_chicken",
       "has_ketchup",
-      "has_lettuce",
-      "has_the_recipe"
+      "has_lettuce"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:chickenburger"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

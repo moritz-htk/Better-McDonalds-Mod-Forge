@@ -20,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_salt",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_salt"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:salt_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

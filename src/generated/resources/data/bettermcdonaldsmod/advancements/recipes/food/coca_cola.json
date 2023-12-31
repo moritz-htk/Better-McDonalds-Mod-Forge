@@ -56,17 +56,16 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_water_bucket",
       "has_sugar",
       "has_salt",
-      "has_brown_dye",
-      "has_the_recipe"
+      "has_brown_dye"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:coca_cola"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

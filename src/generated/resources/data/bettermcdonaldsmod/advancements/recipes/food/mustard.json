@@ -56,17 +56,16 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_water_bucket",
       "has_sugar",
       "has_salt",
-      "has_pumpkin_seeds",
-      "has_the_recipe"
+      "has_pumpkin_seeds"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:mustard"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

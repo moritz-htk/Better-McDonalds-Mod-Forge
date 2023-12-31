@@ -44,16 +44,15 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_knife",
       "has_baked_potato",
-      "has_salt",
-      "has_the_recipe"
+      "has_salt"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:fries"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

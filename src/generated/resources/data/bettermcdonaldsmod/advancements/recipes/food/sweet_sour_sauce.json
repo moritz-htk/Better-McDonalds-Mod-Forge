@@ -56,17 +56,16 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_water_bucket",
       "has_sugar",
       "has_salt",
-      "has_honey_bottle",
-      "has_the_recipe"
+      "has_honey_bottle"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:sweet_sour_sauce"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

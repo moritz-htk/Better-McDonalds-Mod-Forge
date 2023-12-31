@@ -42,16 +42,15 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_tomato",
       "has_lettuce",
-      "has_carrot",
-      "has_the_recipe"
+      "has_carrot"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:snack_salad"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

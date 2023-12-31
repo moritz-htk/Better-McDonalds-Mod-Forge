@@ -34,15 +34,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_bread",
-      "has_cooked_beef_patty",
-      "has_the_recipe"
+      "has_cooked_beef_patty"
     ]
   ],
   "rewards": {
     "recipes": [
       "bettermcdonaldsmod:hamburger"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

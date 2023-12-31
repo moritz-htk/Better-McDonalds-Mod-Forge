@@ -15,17 +15,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "background": "bettermcdonaldsmod:textures/screens/advancement_tab.png",
     "description": {
       "translate": "advancement.bettermcdonaldsmod.get_seeds.description"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "bettermcdonaldsmod:lettuce_seeds"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancement.bettermcdonaldsmod.get_seeds.title"
     }

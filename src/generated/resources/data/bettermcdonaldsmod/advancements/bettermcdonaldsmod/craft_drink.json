@@ -15,17 +15,14 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "background": "bettermcdonaldsmod:textures/screens/advancement_tab.png",
     "description": {
       "translate": "advancement.bettermcdonaldsmod.craft_drink.description"
     },
     "frame": "goal",
-    "hidden": false,
     "icon": {
       "item": "bettermcdonaldsmod:coca_cola"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancement.bettermcdonaldsmod.craft_drink.title"
     }
