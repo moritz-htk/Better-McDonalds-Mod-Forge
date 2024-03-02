@@ -14,7 +14,7 @@ import java.util.concurrent.CompletableFuture;
 
 // Class for gathering data during mod data generation
 @Mod.EventBusSubscriber(modid = BetterMcDonaldsMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class DataGenerators {
+public class ModDataGenerators {
     // Method to gather data during data generation
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
@@ -33,5 +33,6 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
         generator.addProvider(event.includeServer(), new ModTagProvider.Items(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(), new ModTagProvider.Blocks(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
     }
 }
