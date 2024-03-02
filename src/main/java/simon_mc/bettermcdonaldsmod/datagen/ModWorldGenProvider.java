@@ -17,7 +17,7 @@ import java.util.concurrent.CompletableFuture;
 
 // Definition of the WorldGenProvider class for world generation data
 public class ModWorldGenProvider extends DatapackBuiltinEntriesProvider {
-    // Definition of a registry set builder for configured and placed features
+    // Define a RegistrySetBuilder
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder().add(ForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap).add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap).add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
 
     // Constructor for the WorldGenProvider class
