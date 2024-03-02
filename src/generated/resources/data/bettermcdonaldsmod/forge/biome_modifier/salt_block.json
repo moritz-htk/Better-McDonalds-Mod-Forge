@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_river",
+  "features": "bettermcdonaldsmod:salt_block",
+  "step": "raw_generation"
+}
